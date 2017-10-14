@@ -12,13 +12,14 @@
         <activity android:name=".StartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".RegistrationActivity"
             android:parentActivityName=".StartScreen" />
-
+        <activity android:name=".SignIn"></activity>
     </application>
 
 </manifest>
