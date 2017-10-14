@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Alexander on 10/14/2017.
+ * Represents a musician with talent
  */
 
 public class Musician extends User {
