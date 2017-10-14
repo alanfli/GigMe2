@@ -6,6 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/primary_text_material_light</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
+
+    <style name="GigMeTheme" parent="Theme.AppCompat.NoActionBar" >
+        <item name="colorPrimary">@color/primary_material_dark_1</item>
+    </style>
+
+    <style name="GigMeTheme2" parent="Theme.AppCompat.NoActionBar" >
+        <item name="colorPrimaryDark">@color/primary_dark_material_dark_1</item>
+    </style>
+
+    <style name="Goodtheme" parent="Theme.AppCompat.NoActionBar" />
 
 </resources>
