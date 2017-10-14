@@ -1,5 +1,6 @@
 package bonetasticbooleans.gigme;
 
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
@@ -19,5 +20,10 @@ public class FirebaseManager {
         database = FirebaseDatabase.getInstance();
     }
 
-    
+    public void writeNewUser(String username, String password, Boolean isMusician) {
+        DatabaseReference myRef = database.getReference("Users");
+
+    }
+
+
 }
