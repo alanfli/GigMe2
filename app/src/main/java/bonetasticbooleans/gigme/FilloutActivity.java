@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 /**
  * Created by dwarr on 10/14/2017.
+ * Represents the registration process for a musician
  */
 
 public class FilloutActivity extends AppCompatActivity {
@@ -26,5 +27,8 @@ public class FilloutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+            
+
     }
 }
