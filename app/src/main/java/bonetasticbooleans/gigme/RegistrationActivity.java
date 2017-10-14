@@ -10,12 +10,13 @@ import android.widget.EditText;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import bonetasticbooleans.gigme.R;
 
 /**
  * Created by alan on 10/14/17.
@@ -37,7 +38,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Button registerButton = (Button) findViewById(R.id.registerButton);
 
-        //
+        // when register button is clicked
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -6,9 +6,9 @@ package bonetasticbooleans.gigme;
  */
 
 public class Account {
-    private String username;
-    private String password;
-    private boolean isMusician;
+    public String username;
+    public String password;
+    public boolean isMusician;
 
     public Account(String username, String password, Boolean isMusician) {
         this.username = username;

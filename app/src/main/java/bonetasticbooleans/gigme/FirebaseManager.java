@@ -9,15 +9,20 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 
 public class FirebaseManager {
+    //Interfaces with Firebase. Provide Firebase references and uploads data
+
+    //singleton design
     private static FirebaseManager firebaseManager = new FirebaseManager();
-    private FirebaseDatabase database;
 
     public static FirebaseManager getInstance() {
         return firebaseManager;
     }
 
-    public FirebaseManager() {
+    private FirebaseDatabase database;
+
+    public FirebaseManager(){
         database = FirebaseDatabase.getInstance();
+
     }
 
     /**
