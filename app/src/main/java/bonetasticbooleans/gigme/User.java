@@ -10,6 +10,10 @@ public class User {
     private String contactInfo;
     private City location;
 
+    User(String name) {
+        this.name = name;
+    }
+
     User(String name, String contact, City city) {
         this.name = name;
         contactInfo = contact;
