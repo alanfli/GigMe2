@@ -2,6 +2,7 @@ package bonetasticbooleans.gigme;
 
 /**
  * Created by dwarr on 10/14/2017.
+ * Represents a client request
  */
 
 public class Request {

@@ -19,7 +19,7 @@
         <activity
             android:name=".RegistrationActivity"
             android:parentActivityName=".StartScreen" />
-        <activity android:name=".SignIn"></activity>
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

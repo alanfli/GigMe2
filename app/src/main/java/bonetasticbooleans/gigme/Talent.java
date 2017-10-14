@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Created by dwarr on 10/14/2017.
+ * Represents a musician's specialty
  */
 
 public enum Talent implements Serializable {
