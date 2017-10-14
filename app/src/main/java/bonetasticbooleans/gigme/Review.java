@@ -12,7 +12,7 @@ public class Review {
     Review (int value, String comment, User user) {
         this.value = value;
         this.comment = comment;
-        this.name = User.getName();
+        this.name = user.getName();
     }
 
     public int getValue() {
