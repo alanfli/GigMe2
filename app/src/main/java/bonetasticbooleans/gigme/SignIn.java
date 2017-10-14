@@ -21,12 +21,12 @@ public class SignIn extends AppCompatActivity {
         Button logInButton = (Button) findViewById(R.id.logInButton);
         logInButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                EditText usernameText = (EditText) findViewById(R.id.usernameText);
-                EditText passwordText = (EditText) findViewById(R.id.passwordText);
-                username = usernameText.getText().toString();
-                password = passwordText.getText().toString();
-                System.out.println("username: " + username);
-                System.out.println("password: " + password);
+                    EditText usernameText = (EditText) findViewById(R.id.usernameText);
+                    EditText passwordText = (EditText) findViewById(R.id.passwordText);
+                    username = usernameText.getText().toString();
+                    password = passwordText.getText().toString();
+                    System.out.println("username: " + username);
+                    System.out.println("password: " + password);
             }
         });
     }
