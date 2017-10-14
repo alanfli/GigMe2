@@ -1,5 +1,6 @@
 package bonetasticbooleans.gigme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,10 +37,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Button registerButton = (Button) findViewById(R.id.registerButton);
 
+        //
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseManager firebaseManager = FirebaseManager.getInstance();
+                final FirebaseManager firebaseManager = FirebaseManager.getInstance();
                 final String username = usernameButton.getText().toString().trim();
                 final String password = passwordButton.getText().toString().trim();
                 final boolean isMusician = checkbox.isChecked();
@@ -51,13 +54,27 @@ public class RegistrationActivity extends AppCompatActivity {
                         Account account = dataSnapshot.getValue(Account.class);
 
                         if (account == null) {
+                            Account.setAccount(firebaseManager.writeNewAccount(username,
+                                    password, isMusician));
 
+                            if (isMusician) {
+//                                Intent musicianRegistration = new Intent(getApplicationContext()
+//                                        , musicianRegistration.class);
+                            } else {
+//                                Intent regularRegistration = new Intent(getApplicationContext(),
+//                                        regularRegistration.class);
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Username is taken",
+                                    Toast.LENGTH_SHORT).show();
                         }
+
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
+                        Toast.makeText(getApplicationContext(), "Registration failed",
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
             }

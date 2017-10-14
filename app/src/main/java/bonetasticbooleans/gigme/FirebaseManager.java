@@ -27,9 +27,9 @@ public class FirebaseManager {
      * @param isMusician whether user is a Musician
      * @return the user object specified
      */
-    public User writeNewUser(String username, String password, Boolean isMusician) {
+    public Account writeNewAccount(String username, String password, Boolean isMusician) {
         DatabaseReference myRef = database.getReference("Accounts");
-        User user = new User(username, password, isMusician);
+        Account user = new Account(username, password, isMusician);
         myRef.child(username).setValue(user);
         return user;
     }
