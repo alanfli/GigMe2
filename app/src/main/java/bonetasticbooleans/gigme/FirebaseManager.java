@@ -12,7 +12,7 @@ public class FirebaseManager {
     private static FirebaseManager firebaseManager = new FirebaseManager();
     private FirebaseDatabase database;
 
-    public static FirebaseManager getFirebaseManager() {
+    public static FirebaseManager getInstance() {
         return firebaseManager;
     }
 
@@ -20,9 +20,28 @@ public class FirebaseManager {
         database = FirebaseDatabase.getInstance();
     }
 
-    public void writeNewUser(String username, String password, Boolean isMusician) {
-        DatabaseReference myRef = database.getReference("Users");
+    /**
+     * Puts a username into the database
+     * @param username the username of added user
+     * @param password the password of added user
+     * @param isMusician whether user is a Musician
+     * @return the user object specified
+     */
+    public User writeNewUser(String username, String password, Boolean isMusician) {
+        DatabaseReference myRef = database.getReference("Accounts");
+        User user = new User(username, password, isMusician);
+        myRef.child(username).setValue(user);
+        return user;
+    }
 
+    /**
+     * Creates a user authenticator. Firebase uses this to determine whether the user already exists
+     * @param username the username of the user
+     * @return the database reference firebase will use for authentication
+     */
+    public DatabaseReference authenticateListener(String username) {
+        DatabaseReference myRef = database.getReference("Accounts").child(username);
+        return myRef;
     }
 
 

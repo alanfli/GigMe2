@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.CheckBox;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import bonetasticbooleans.gigme.R;
 
@@ -32,10 +35,31 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Button registerButton = (Button) findViewById(R.id.registerButton);
 
-        registerButton.setOnLongClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("HEy", "he");
+                FirebaseManager firebaseManager = FirebaseManager.getInstance();
+                final String username = usernameButton.getText().toString().trim();
+                final String password = passwordButton.getText().toString().trim();
+                final boolean isMusician = checkbox.isChecked();
+
+                DatabaseReference authenticator = firebaseManager.authenticateListener(username);
+
+                authenticator.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Account account = dataSnapshot.getValue(Account.class);
+
+                        if (account == null) {
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
