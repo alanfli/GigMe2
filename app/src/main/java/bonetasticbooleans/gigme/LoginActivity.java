@@ -8,14 +8,14 @@ import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class SignIn extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private String username;
     private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_login);
 
         TextView signInTitle = (TextView) findViewById(R.id.signInTitle);
         Button logInButton = (Button) findViewById(R.id.logInButton);

@@ -14,10 +14,10 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
     }
 
-//    public void onSignPressed(View v) {
-//        Intent intent = new Intent(this, SignIn.class);
-//        startActivity(intent);
-//    }
+    public void onSignPressed(View v) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 
 
     public void onRegistrationPressed(View v) {
