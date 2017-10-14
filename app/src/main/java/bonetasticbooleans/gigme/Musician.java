@@ -11,19 +11,13 @@ public class Musician extends User {
     private int rating;
     private int totalRatings;
     private int numRatings;
-    private ArrayList<String> reviews = new ArrayList<String>();
-    private String name;
     private String bio;
-    private String contactInfo;
-    private City location;
+    private ArrayList<String> reviews = new ArrayList<String>();
     private ArrayList<Talent> talents = new ArrayList<Talent>();
 
     Musician(String name, String bio, String contact, City location) {
-        super();
-        this.name = name;
+        super(name, contact, location);
         this.bio = bio;
-        this.contactInfo = contact;
-        this.location = location;
         visibility = true;
     }
 
