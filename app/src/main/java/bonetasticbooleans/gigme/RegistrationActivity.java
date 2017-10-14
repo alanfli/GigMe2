@@ -53,14 +53,15 @@ public class RegistrationActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         Account account = dataSnapshot.getValue(Account.class);
-
+                        // if account is null, then the user doesnt exist, and firebase adds you
+                        // to the database
                         if (account == null) {
                             Account.setAccount(firebaseManager.writeNewAccount(username,
                                     password, isMusician));
 
                             if (isMusician) {
 //                                Intent musicianRegistration = new Intent(getApplicationContext()
-//                                        , musicianRegistration.class);
+//                                        , musicianRegistration.class);    <----different screens for different account types
                             } else {
 //                                Intent regularRegistration = new Intent(getApplicationContext(),
 //                                        regularRegistration.class);

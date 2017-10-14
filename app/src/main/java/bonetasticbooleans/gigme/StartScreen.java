@@ -12,7 +12,6 @@ public class StartScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
-        System.out.print("Wtf");
     }
 
 //    public void onSignPressed(View v) {
