@@ -11,8 +11,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FilloutPageClient extends AppCompatActivity {
     private Spinner userSpinner;
@@ -51,7 +54,19 @@ public class FilloutPageClient extends AppCompatActivity {
                     System.out.println(user.getName());
                     System.out.println(contact[0]);
                     System.out.println(contact[1]);
-                    database.child(user.getUsername()).setValue(user);
+                    database.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Account account = dataSnapshot.getValue(Account.class);
+                            account.setClientUser((Client) user);
+                            DatabaseReference.
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
 //                    Intent intent = new Intent(FilloutPageClient.this, clientHomePage.class);
 //                    startActivity(intent);
                 } else if (!(user.getName().isEmpty() || contact[0].isEmpty() || contact[1].isEmpty())) {
