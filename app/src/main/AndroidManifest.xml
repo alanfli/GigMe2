@@ -19,7 +19,8 @@
         <activity
             android:name=".RegistrationActivity"
             android:parentActivityName=".StartScreen" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".FilloutPageClient"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package bonetasticbooleans.gigme;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,6 +46,13 @@ public class LoginActivity extends AppCompatActivity {
                                 && account.password.equals(password)) {
                             account.setAccount(account);
                             Log.d("LoginActivity", "succesful login with " + username);
+                            if (account.isMusician) {
+                                Intent intent = new Intent(LoginActivity.this, FilloutActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Intent intent = new Intent(LoginActivity.this, FilloutPageClient.class);
+                                startActivity(intent);
+                            }
                         } else {
                             Toast.makeText(getApplicationContext(), "Username and password" +
                                     " do not match", Toast.LENGTH_SHORT).show();
