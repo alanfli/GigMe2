@@ -38,4 +38,6 @@ public class Account {
     public static void clearAccount() {
         currentAccount = null;
     }
+
+
 }

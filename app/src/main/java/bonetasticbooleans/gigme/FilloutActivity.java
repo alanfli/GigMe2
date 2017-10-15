@@ -29,10 +29,12 @@ public class FilloutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fillout);
+        final Musician musician = (Musician) this.getIntent().getSerializableExtra("musician");
 
         Spinner instrumentSpinner = (Spinner) findViewById(R.id.instrumentSpinner);
         Spinner genreSpinner = (Spinner) findViewById(R.id.genreSpinner);
         Spinner locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
+        Button submitButton = (Button) findViewById(R.id.submitMusicianRegistrationButton);
 
         ArrayAdapter<Talent> instrumentAdapter = new ArrayAdapter<Talent>(this,
                 android.R.layout.simple_spinner_item, Talent.values());
@@ -48,5 +50,12 @@ public class FilloutActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, City.values());
         instrumentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         locationSpinner.setAdapter(locationAdapter);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+
     }
 }
