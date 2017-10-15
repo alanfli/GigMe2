@@ -10,8 +10,8 @@ public class Client extends User {
     private int totalRatings;
     private int numRatings;
 
-    Client(String name) {
-        super(name);
+    Client(String name, String contact, City city) {
+        super(name, contact, city);
     }
 
     /**
