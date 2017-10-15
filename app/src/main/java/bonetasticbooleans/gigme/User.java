@@ -1,11 +1,16 @@
 package bonetasticbooleans.gigme;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by Alexander on 10/14/2017.
  * Represents a user in the app
  */
 
-public abstract class User {
+public abstract class User implements Serializable {
     private String name;
     private String contactInfo;
     private City location;
@@ -39,4 +44,5 @@ public abstract class User {
     public void setLocation(City location) {
         this.location = location;
     }
+
 }

@@ -14,7 +14,7 @@ public class Client extends User {
     Client(String username) {
         super(username);
     }
-    
+
 
     /**
      * Sends request to GigMe app with information about gig, which returns list of
