@@ -56,6 +56,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         if (account == null) {
                             Account.setAccount(firebaseManager.writeNewAccount(username,
                                     password, isMusician));
+                            account = Account.getCurrentAccount();
 
                             if (account.isMusician) {
                                 Intent intent = new Intent(RegistrationActivity.this, FilloutActivity.class);
