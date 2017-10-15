@@ -47,11 +47,11 @@ public class LoginActivity extends AppCompatActivity {
                             account.setAccount(account);
                             Log.d("LoginActivity", "succesful login with " + username);
                             if (account.isMusician) {
-                                Intent intent = new Intent(LoginActivity.this, FilloutActivity.class);
-                                startActivity(intent);
+                                Intent i = new Intent(LoginActivity.this, FilloutActivity.class);
+                                startActivity(i);
                             } else {
-                                Intent intent = new Intent(LoginActivity.this, FilloutPageClient.class);
-                                startActivity(intent);
+                                Intent i = new Intent(LoginActivity.this, FilloutPageClient.class);
+                                startActivity(i);
                             }
                         } else {
                             Toast.makeText(getApplicationContext(), "Username and password" +

@@ -16,7 +16,8 @@ public enum Talent implements Serializable {
     SAXOPHONE ("Saxophone"),
     BARITONE ("Baritone"),
     VIOLIN ("Violin"),
-    SINGER ("Singer");
+    SINGER ("Singer"),
+    MYBODY ("My Body");
 
     private String talent;
 
