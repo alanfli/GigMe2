@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                                 && account.password.equals(password)) {
                             account.setAccount(account);
                             if (account.isMusician) {
-                                Intent i = new Intent(LoginActivity.this, FilloutActivity.class);
+                                Intent i = new Intent(LoginActivity.this, TalentFilloutActivity.class);
                                 startActivity(i);
                             } else {
                                 Intent i = new Intent(LoginActivity.this, FilloutPageClient.class);

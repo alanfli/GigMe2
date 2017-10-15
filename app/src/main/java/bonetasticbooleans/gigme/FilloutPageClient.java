@@ -19,12 +19,11 @@ public class FilloutPageClient extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fillout_page_client);
+        setContentView(R.layout.activity_talent_fillout);
 
         clientSpinner = (Spinner) findViewById(R.id.cityClientSpinner);
         clientEmail = (EditText) findViewById(R.id.clientEmail);
         clientPhone = (EditText) findViewById(R.id.clientPhoneNumber);
-        clientName = (TextView) findViewById(R.id.actualName);
         submit = (Button) findViewById(R.id.submitGeneralInfoButton);
 
 

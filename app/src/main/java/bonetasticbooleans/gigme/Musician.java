@@ -25,12 +25,8 @@ public class Musician extends User {
         this.visibility = visibility;
     }
 
-    public void addTalent(Talent talent) {
-        talents.add(talent);
-    }
-
-    public void removeTalent(Talent talent) {
-        talents.remove(talent);
+    public void setTalents(ArrayList<Talent> talents) {
+        this.talents = talents;
     }
 
 

@@ -1,5 +1,6 @@
 package bonetasticbooleans.gigme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,7 @@ public class TalentFilloutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_talent_fillout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        final Musician musician = (Musician) this.getIntent().getSerializableExtra("user");
 
         final CheckBox tromboneButton = (CheckBox) findViewById(R.id.tromboneButton);
         final CheckBox trumpetButton = (CheckBox) findViewById(R.id.trumpetButton);
@@ -73,9 +75,11 @@ public class TalentFilloutActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please Make a selection",
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    // goto wherever next activity
-                    //Intent intent = new Intent(this, Activity.class);
-                    //startActivity(intent);
+                    musician.setTalents(talents);
+                    Intent genreRegistration =  new Intent(TalentFilloutActivity.this
+                            , GenreFilloutActivity.class);
+                    genreRegistration.putExtra("user", musician);
+                    startActivity(genreRegistration);
                 }
             }
         });

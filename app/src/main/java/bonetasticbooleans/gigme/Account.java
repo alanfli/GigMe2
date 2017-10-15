@@ -43,4 +43,8 @@ public class Account {
         this.musicianUser = new Musician("username");
     }
 
+    private void setClientUser() {
+        this.clientUser = new Client("username");
+    }
+
 }
