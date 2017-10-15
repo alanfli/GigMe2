@@ -19,7 +19,7 @@ public class FilloutPageClient extends AppCompatActivity {
         clientSpinner = (Spinner) findViewById(R.id.cityClientSpinner);
         clientEmail = (EditText) findViewById(R.id.clientEmail);
         clientPhone = (EditText) findViewById(R.id.clientPhoneNumber);
-        
+
         ArrayAdapter<City> adapter = new ArrayAdapter<City>(this, android.R.layout.simple_spinner_item, City.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         clientSpinner.setAdapter(adapter);
