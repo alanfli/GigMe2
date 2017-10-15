@@ -83,12 +83,15 @@ public class TalentFilloutActivity extends AppCompatActivity {
                 } else {
                     musician.setTalents(talents);
                     FirebaseManager firebaseManager = FirebaseManager.getInstance();
-                    DatabaseReference authenticator = firebaseManager.authenticateListener(musician.getUsername());
+                    final DatabaseReference authenticator = firebaseManager.authenticateListener(musician.getUsername());
+
                     authenticator.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             Account account = dataSnapshot.getValue(Account.class);
                             account.setMusicianUser();
+                            authenticator.setValue(account);
+
                             Log.d("Account set", "Set data for " + musician.getUsername());
                         }
 

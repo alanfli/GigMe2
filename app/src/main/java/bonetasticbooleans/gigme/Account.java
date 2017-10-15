@@ -16,6 +16,8 @@ public class Account {
         this.username = username;
         this.password = password;
         this.isMusician = isMusician;
+        this.musicianUser = null;
+        this.clientUser = null;
     }
 
     //null account for Firebase casting when retrieving

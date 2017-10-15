@@ -39,6 +39,8 @@ public class FirebaseManager {
         return user;
     }
 
+
+
     /**
      * Creates a user authenticator. Firebase uses this to determine whether the user already exists
      * @param username the username of the user
