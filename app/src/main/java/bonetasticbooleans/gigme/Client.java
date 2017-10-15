@@ -11,13 +11,10 @@ public class Client extends User {
     private int totalRatings;
     private int numRatings;
 
-    Client(String name) {
-        super(name);
+    public Client(String username) {
+        super(username);
     }
 
-    Client(String name, String contact, City city) {
-        super(name, contact, city);
-    }
 
     /**
      * Sends request to GigMe app with information about gig, which returns list of

@@ -16,10 +16,9 @@ public class Musician extends User {
     private ArrayList<String> reviews = new ArrayList<String>();
     private ArrayList<Talent> talents = new ArrayList<Talent>();
 
-    Musician(String name, String bio, String contact, City location) {
-        super(name, contact, location);
-        this.bio = bio;
-        visibility = true;
+    public Musician(String username) {
+        super(username);
+        this.visibility = true;
     }
 
     public void setVisibility(boolean visibility) {
@@ -33,6 +32,7 @@ public class Musician extends User {
     public void removeTalent(Talent talent) {
         talents.remove(talent);
     }
+
 
     public boolean hasTalent(Talent talent) {
         for (int i = 0; i < talents.size(); i++) {

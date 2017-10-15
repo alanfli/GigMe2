@@ -59,13 +59,15 @@ public class RegistrationActivity extends AppCompatActivity {
                             account = Account.getCurrentAccount();
 
                             if (isMusician) {
-                                Intent musicianRegistration = new Intent(getApplicationContext()
+                                Intent musicianRegistration = new Intent(RegistrationActivity.this
                                         , FilloutActivity.class);   // <----different screens for different account types
+                                musicianRegistration.putExtra("musician", new Musician(username));
                                 startActivity(musicianRegistration);
                             } else {
-                                Intent intent = new Intent(RegistrationActivity.this, FilloutPageClient.class);
-                                //intent.putExtra("USER", new User());
-                                startActivity(intent);
+                                Intent clientRegistration = new Intent(RegistrationActivity.this,
+                                        FilloutPageClient.class);
+                                clientRegistration.putExtra("client", new Client(username));
+                                startActivity(clientRegistration);
                             }
                         } else {
                             Toast.makeText(getApplicationContext(), "Username is taken",
