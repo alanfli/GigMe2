@@ -29,7 +29,7 @@ public class FilloutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fillout);
-        final Musician musician = savedInstanceState.getParcelable("musician");
+        final Musician musician = (Musician) savedInstanceState.getSerializable("musician");
 
         Spinner instrumentSpinner = (Spinner) findViewById(R.id.instrumentSpinner);
         Spinner genreSpinner = (Spinner) findViewById(R.id.genreSpinner);
