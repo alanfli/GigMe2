@@ -11,6 +11,7 @@ public class Client extends User {
     private int totalRatings;
     private int numRatings;
 
+
     public Client(String username) {
         super(username);
     }
@@ -33,5 +34,6 @@ public class Client extends User {
         this.rating = (totalRatings + 0.0) / (numRatings);
 
     }
+
 
 }

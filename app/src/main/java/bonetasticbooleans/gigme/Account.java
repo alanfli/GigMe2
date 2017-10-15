@@ -39,5 +39,21 @@ public class Account {
         currentAccount = null;
     }
 
+    public void setClientUser(Client client) {
+        this.clientUser = client;
+    }
+
+    public void setMusicianUser(Musician musician) {
+        this.musicianUser = musician;
+    }
+
+    public Client getClientUser() {
+        return clientUser;
+    }
+
+    public  Musician getMusicianUser() {
+        return musicianUser;
+    }
+
 
 }

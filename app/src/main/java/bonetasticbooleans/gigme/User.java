@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 public abstract class User implements Serializable {
     private String name;
-    private String contactInfo;
+    private String[] contactInfo = new String[2];
     private City location;
     private String username;
 
@@ -27,12 +27,13 @@ public abstract class User implements Serializable {
         this.name = name;
     }
 
-    public String getContactInfo() {
+    public String[] getContactInfo() {
         return contactInfo;
     }
 
-    public void setContactInfo(String contact) {
-        this.contactInfo = contact;
+    public void setContactInfo(String phone, String email) {
+        this.contactInfo[0] = phone;
+        this.contactInfo[1] = email;
     }
 
     public City getLocation() {
@@ -41,5 +42,9 @@ public abstract class User implements Serializable {
 
     public void setLocation(City location) {
         this.location = location;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
