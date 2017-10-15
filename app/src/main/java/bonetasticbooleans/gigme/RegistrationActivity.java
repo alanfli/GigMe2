@@ -60,7 +60,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
                             if (isMusician) {
                                 Intent musicianRegistration = new Intent(RegistrationActivity.this
-                                        , TalentFilloutActivity.class);   // <----different screens for different account types
+                                        , FilloutActivity.class);   // <----different screens for different account types
+
                                 musicianRegistration.putExtra("user", new Musician(username));
                                 startActivity(musicianRegistration);
                             } else {
