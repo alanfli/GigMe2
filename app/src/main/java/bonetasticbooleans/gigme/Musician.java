@@ -15,6 +15,7 @@ public class Musician extends User {
     private String bio;
     private ArrayList<String> reviews = new ArrayList<String>();
     private ArrayList<Talent> talents = new ArrayList<Talent>();
+    private ArrayList<Genre> genres = new ArrayList<>();
 
     public Musician(String username) {
         super(username);
@@ -25,14 +26,13 @@ public class Musician extends User {
         this.visibility = visibility;
     }
 
-    public void addTalent(Talent talent) {
-        talents.add(talent);
+    public void setTalents(ArrayList<Talent> talents) {
+        this.talents = talents;
     }
 
-    public void removeTalent(Talent talent) {
-        talents.remove(talent);
+    public void setGenres(ArrayList<Genre> genres) {
+        this.genres = genres;
     }
-
 
     public boolean hasTalent(Talent talent) {
         for (int i = 0; i < talents.size(); i++) {

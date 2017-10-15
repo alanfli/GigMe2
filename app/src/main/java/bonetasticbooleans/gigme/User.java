@@ -27,7 +27,11 @@ public abstract class User implements Serializable {
         this.name = name;
     }
 
-    public String[] getContactInfo() {
+    public String getUsername() {
+        return username;
+    }
+
+    public String getContactInfo() {
         return contactInfo;
     }
 
