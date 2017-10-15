@@ -39,11 +39,11 @@ public class Account {
         currentAccount = null;
     }
 
-    private void setMusicianUser() {
+    public void setMusicianUser() {
         this.musicianUser = new Musician("username");
     }
 
-    private void setClientUser() {
+    public void setClientUser() {
         this.clientUser = new Client("username");
     }
 
