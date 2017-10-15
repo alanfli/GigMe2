@@ -20,12 +20,12 @@
             android:name=".RegistrationActivity"
             android:parentActivityName=".StartScreen" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".FilloutActivity" />
         <activity android:name=".FilloutPageClient" />
         <activity
             android:name=".TalentFilloutActivity"
             android:label="@string/title_activity_talent_fillout"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".GenreFilloutActivity"></activity>
     </application>
 
 </manifest>

@@ -1,14 +1,21 @@
 package bonetasticbooleans.gigme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -22,6 +29,7 @@ public class TalentFilloutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_talent_fillout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        final Musician musician = (Musician) this.getIntent().getSerializableExtra("user");
 
         final CheckBox tromboneButton = (CheckBox) findViewById(R.id.tromboneButton);
         final CheckBox trumpetButton = (CheckBox) findViewById(R.id.trumpetButton);
@@ -73,9 +81,29 @@ public class TalentFilloutActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please Make a selection",
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    // goto wherever next activity
-                    //Intent intent = new Intent(this, Activity.class);
-                    //startActivity(intent);
+                    musician.setTalents(talents);
+                    FirebaseManager firebaseManager = FirebaseManager.getInstance();
+                    final DatabaseReference authenticator = firebaseManager.authenticateListener(musician.getUsername());
+
+                    authenticator.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Account account = dataSnapshot.getValue(Account.class);
+                            account.setMusicianUser();
+                            authenticator.setValue(account);
+
+                            Log.d("Account set", "Set data for " + musician.getUsername());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    Intent genreRegistration =  new Intent(TalentFilloutActivity.this
+                            , GenreFilloutActivity.class);
+                    genreRegistration.putExtra("user", musician);
+                    startActivity(genreRegistration);
                 }
             }
         });
