@@ -1,10 +1,12 @@
 package bonetasticbooleans.gigme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
  * Created by alan on 10/15/17.
  */
 
-class GenreFilloutActivity extends AppCompatActivity {
+public class GenreFilloutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +90,15 @@ class GenreFilloutActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
+                        Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_SHORT).show();
                     }
-                }
+                });
+
+                Intent i = new Intent(GenreFilloutActivity.this, FilloutPageClient.class);
+                i.putExtra("user", musician);
+                startActivity(i);
 
             }
+        });
+    }
 }
