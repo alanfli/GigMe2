@@ -27,12 +27,13 @@ public abstract class User implements Serializable {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
+
+    public String[] getContactInfo() {
+        return contactInfo;
     }
 
-    public String getContactInfo() {
-        return contactInfo;
+    public void setContactInfo(String[] info) {
+        this.contactInfo = info;
     }
 
     public void setContactInfo(String phone, String email) {

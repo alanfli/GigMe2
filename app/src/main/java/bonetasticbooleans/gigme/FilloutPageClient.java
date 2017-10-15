@@ -59,7 +59,7 @@ public class FilloutPageClient extends AppCompatActivity {
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             Account account = dataSnapshot.getValue(Account.class);
                             account.setClientUser((Client) user);
-                            DatabaseReference.
+                            database.child("Accounts").child(user.getUsername()).setValue(account);
                         }
 
                         @Override
