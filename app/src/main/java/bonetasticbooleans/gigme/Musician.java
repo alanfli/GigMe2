@@ -18,7 +18,7 @@ public class Musician extends User {
 
     public Musician(String username) {
         super(username);
-        visibility = true;
+        this.visibility = true;
     }
 
     public void setVisibility(boolean visibility) {
@@ -32,6 +32,7 @@ public class Musician extends User {
     public void removeTalent(Talent talent) {
         talents.remove(talent);
     }
+
 
     public boolean hasTalent(Talent talent) {
         for (int i = 0; i < talents.size(); i++) {

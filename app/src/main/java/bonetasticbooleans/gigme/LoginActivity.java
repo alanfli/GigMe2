@@ -45,7 +45,6 @@ public class LoginActivity extends AppCompatActivity {
                         if (account != null && account.username.equals(username)
                                 && account.password.equals(password)) {
                             account.setAccount(account);
-                            Log.d("LoginActivity", "succesful login with " + username);
                             if (account.isMusician) {
                                 Intent i = new Intent(LoginActivity.this, FilloutActivity.class);
                                 startActivity(i);
