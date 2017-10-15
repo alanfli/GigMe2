@@ -10,14 +10,23 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
-    <style name="GigMeTheme" parent="Theme.AppCompat.NoActionBar" >
+    <style name="GigMeTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/primary_material_dark_1</item>
     </style>
 
-    <style name="GigMeTheme2" parent="Theme.AppCompat.NoActionBar" >
+    <style name="GigMeTheme2" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimaryDark">@color/primary_dark_material_dark_1</item>
     </style>
 
     <style name="Goodtheme" parent="Theme.AppCompat.NoActionBar" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
