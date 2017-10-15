@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,9 +28,15 @@ public class FilloutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_fillout);
 
+        Spinner instrumentSpinner = (Spinner) findViewById(R.id.instrumentSpinner);
+        Spinner genreSpinner = (Spinner) findViewById(R.id.genreSpinner);
+        Spinner locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
 
-
+        ArrayAdapter<Talent> instrumentAdapter = new ArrayAdapter<Talent>(this,
+                android.R.layout.simple_spinner_item, Talent.values());
+        instrumentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        instrumentSpinner.setAdapter(instrumentAdapter);
     }
 }
