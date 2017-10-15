@@ -25,7 +25,7 @@ public class FilloutPageClient extends AppCompatActivity {
         clientEmail = (EditText) findViewById(R.id.clientEmail);
         clientPhone = (EditText) findViewById(R.id.clientPhoneNumber);
         clientName = (TextView) findViewById(R.id.actualName);
-        submit = (Button) findViewById(R.id.submit);
+        submit = (Button) findViewById(R.id.submitGeneralInfoButton);
 
 
         ArrayAdapter<City> adapter = new ArrayAdapter<City>(this, android.R.layout.simple_spinner_item, City.values());
