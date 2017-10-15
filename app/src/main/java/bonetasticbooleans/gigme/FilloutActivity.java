@@ -38,5 +38,15 @@ public class FilloutActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, Talent.values());
         instrumentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         instrumentSpinner.setAdapter(instrumentAdapter);
+
+        ArrayAdapter<Genre> genreAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, Genre.values());
+        instrumentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        genreSpinner.setAdapter(genreAdapter);
+
+        ArrayAdapter<City> locationAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, City.values());
+        instrumentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        locationSpinner.setAdapter(locationAdapter);
     }
 }
