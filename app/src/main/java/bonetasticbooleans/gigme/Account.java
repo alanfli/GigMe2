@@ -39,5 +39,8 @@ public class Account {
         currentAccount = null;
     }
 
+    private void setMusicianUser() {
+        this.musicianUser = new Musician("username");
+    }
 
 }
