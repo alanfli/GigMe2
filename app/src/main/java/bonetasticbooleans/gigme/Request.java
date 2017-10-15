@@ -10,7 +10,7 @@ public class Request {
     private Talent music;
     private String date;
     private String description;
-    private User client;
+    //private Client client;
 
 
 }

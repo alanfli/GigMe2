@@ -64,6 +64,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 startActivity(musicianRegistration);
                             } else {
                                 Intent intent = new Intent(RegistrationActivity.this, FilloutPageClient.class);
+                                //intent.putExtra("USER", new User());
                                 startActivity(intent);
                             }
                         } else {
