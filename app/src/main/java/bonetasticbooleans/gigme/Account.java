@@ -40,6 +40,6 @@ public class Account {
     }
 
     private void setMusicianUser() {
-        this.musicianUser = new Musician();
+        this.musicianUser = new Musician("");
     }
 }
