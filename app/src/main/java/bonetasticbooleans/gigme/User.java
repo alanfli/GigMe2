@@ -42,5 +42,4 @@ public abstract class User implements Serializable {
     public void setLocation(City location) {
         this.location = location;
     }
-
 }
