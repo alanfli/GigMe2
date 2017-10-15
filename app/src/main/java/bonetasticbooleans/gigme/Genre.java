@@ -9,7 +9,15 @@ import java.io.Serializable;
 public enum Genre implements Serializable {
     JAZZ("Jazz"),
     ROCK("Rock"),
-    ORCHESTRA("Orchestra");
+    ORCHESTRA("Orchestra"),
+    LATIN("Latin"),
+    COUNTRY("Country"),
+    THEATRICAL("Theatrical"),
+    DANCE("Dance"),
+    ALTERNATIVE("Alternative"),
+    SOLO("Solo"),
+    AMBIENT("Ambient");
+
 
 
 

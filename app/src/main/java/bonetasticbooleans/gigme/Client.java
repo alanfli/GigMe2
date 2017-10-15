@@ -6,9 +6,14 @@ package bonetasticbooleans.gigme;
  */
 
 public class Client extends User {
-    private int rating;
+
+    private double rating;
     private int totalRatings;
     private int numRatings;
+
+    Client(String name) {
+        super(name);
+    }
 
     Client(String name, String contact, City city) {
         super(name, contact, city);
@@ -20,11 +25,16 @@ public class Client extends User {
      *
      * @return Musician[] of available musicians
      */
-    public Musician[] sendRequest(City location, String date, Talent talent, Genre genre) {
+    public Musician[] requestMusicians(City location, String date, Talent talent, Genre genre) {
         return new Musician[0];
     }
 
     public void updateRating(int rating) {
-        rating = (totalRatings + rating) / (numRatings + 1);
+
+        numRatings++;
+        totalRatings += rating;
+        this.rating = (totalRatings + 0.0) / (numRatings);
+
     }
+
 }

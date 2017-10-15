@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Musician extends User {
     private boolean visibility;
-    private int rating;
+    private double rating;
     private int totalRatings;
     private int numRatings;
     private String bio;
@@ -44,7 +44,11 @@ public class Musician extends User {
     }
 
     public void updateRating(int rating) {
-        rating = (totalRatings + rating) / (numRatings + 1);
+
+        numRatings++;
+        totalRatings += rating;
+        this.rating = (totalRatings + 0.0) / (numRatings);
+
     }
 
     public void addReview(String review) {

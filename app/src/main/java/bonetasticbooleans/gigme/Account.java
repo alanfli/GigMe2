@@ -9,8 +9,10 @@ public class Account {
     public String username;
     public String password;
     public boolean isMusician;
+    public Musician musicianUser;
+    public Client clientUser;
 
-    public Account(String username, String password, Boolean isMusician) {
+    public Account(String username, String password, boolean isMusician) {
         this.username = username;
         this.password = password;
         this.isMusician = isMusician;

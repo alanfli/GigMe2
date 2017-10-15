@@ -58,9 +58,10 @@ public class RegistrationActivity extends AppCompatActivity {
                                     password, isMusician));
                             account = Account.getCurrentAccount();
 
-                            if (account.isMusician) {
-                                Intent intent = new Intent(RegistrationActivity.this, FilloutActivity.class);
-                                startActivity(intent);
+                            if (isMusician) {
+                                Intent musicianRegistration = new Intent(getApplicationContext()
+                                        , FilloutActivity.class);   // <----different screens for different account types
+                                startActivity(musicianRegistration);
                             } else {
                                 Intent intent = new Intent(RegistrationActivity.this, FilloutPageClient.class);
                                 startActivity(intent);
