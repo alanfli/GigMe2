@@ -18,7 +18,7 @@ public class Musician extends User {
 
     public Musician(String username) {
         super(username);
-        visibility = true;
+        this.visibility = true;
     }
 
     public void setVisibility(boolean visibility) {

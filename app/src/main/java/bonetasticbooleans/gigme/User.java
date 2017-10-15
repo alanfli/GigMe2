@@ -14,7 +14,7 @@ public abstract class User implements Serializable {
     private City location;
     private String username;
 
-    User(String username) {
+    public User(String username) {
         this.username = username;
     }
 

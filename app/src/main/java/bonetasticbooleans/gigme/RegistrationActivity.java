@@ -59,7 +59,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             account = Account.getCurrentAccount();
 
                             if (isMusician) {
-                                Intent musicianRegistration = new Intent(getApplicationContext()
+                                Intent musicianRegistration = new Intent(RegistrationActivity.this
                                         , FilloutActivity.class);   // <----different screens for different account types
                                 musicianRegistration.putExtra("musician", new Musician(username));
                                 startActivity(musicianRegistration);

@@ -11,7 +11,7 @@ public class Client extends User {
     private int totalRatings;
     private int numRatings;
 
-    Client(String username) {
+    public Client(String username) {
         super(username);
     }
 
