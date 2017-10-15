@@ -5,20 +5,16 @@ package bonetasticbooleans.gigme;
  * Represents a user in the app
  */
 
-public class User {
+public abstract class User {
     private String name;
     private String contactInfo;
     private City location;
+    private String username;
 
-    User(String name) {
-        this.name = name;
+    User(String username) {
+        this.username = username;
     }
 
-    User(String name, String contact, City city) {
-        this.name = name;
-        contactInfo = contact;
-        location = city;
-    }
 
     public String getName() {
         return name;

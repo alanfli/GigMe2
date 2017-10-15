@@ -16,9 +16,8 @@ public class Musician extends User {
     private ArrayList<String> reviews = new ArrayList<String>();
     private ArrayList<Talent> talents = new ArrayList<Talent>();
 
-    Musician(String name, String bio, String contact, City location) {
-        super(name, contact, location);
-        this.bio = bio;
+    public Musician(String username) {
+        super(username);
         visibility = true;
     }
 

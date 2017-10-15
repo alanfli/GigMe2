@@ -38,4 +38,8 @@ public class Account {
     public static void clearAccount() {
         currentAccount = null;
     }
+
+    private void setMusicianUser() {
+        this.musicianUser = new Musician();
+    }
 }
