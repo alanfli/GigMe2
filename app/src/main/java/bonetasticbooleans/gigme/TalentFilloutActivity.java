@@ -6,10 +6,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -76,6 +82,21 @@ public class TalentFilloutActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 } else {
                     musician.setTalents(talents);
+                    FirebaseManager firebaseManager = FirebaseManager.getInstance();
+                    DatabaseReference authenticator = firebaseManager.authenticateListener(musician.getUsername());
+                    authenticator.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Account account = dataSnapshot.getValue(Account.class);
+                            account.setMusicianUser();
+                            Log.d("Account set", "Set data for " + musician.getUsername());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     Intent genreRegistration =  new Intent(TalentFilloutActivity.this
                             , GenreFilloutActivity.class);
                     genreRegistration.putExtra("user", musician);

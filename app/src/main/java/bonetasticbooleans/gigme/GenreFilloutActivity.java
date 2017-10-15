@@ -3,6 +3,7 @@ package bonetasticbooleans.gigme;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -86,6 +87,7 @@ public class GenreFilloutActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         Account account = dataSnapshot.getValue(Account.class);
                         account.setMusicianUser();
+                        Log.d("Account set", "Set data for " + musician.getUsername());
                     }
 
                     @Override
