@@ -1,5 +1,8 @@
 package bonetasticbooleans.gigme;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
 /**
@@ -41,4 +44,5 @@ public abstract class User implements Serializable {
     public void setLocation(City location) {
         this.location = location;
     }
+
 }

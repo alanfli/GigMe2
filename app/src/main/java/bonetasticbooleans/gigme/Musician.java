@@ -33,6 +33,7 @@ public class Musician extends User {
         talents.remove(talent);
     }
 
+
     public boolean hasTalent(Talent talent) {
         for (int i = 0; i < talents.size(); i++) {
             if (talents.get(i).equals(talent)) {
