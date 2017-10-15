@@ -56,14 +56,15 @@ public class RegistrationActivity extends AppCompatActivity {
                         if (account == null) {
                             Account.setAccount(firebaseManager.writeNewAccount(username,
                                     password, isMusician));
+                            account = Account.getCurrentAccount();
 
                             if (isMusician) {
                                 Intent musicianRegistration = new Intent(getApplicationContext()
                                         , FilloutActivity.class);   // <----different screens for different account types
                                 startActivity(musicianRegistration);
                             } else {
-//                                Intent regularRegistration = new Intent(getApplicationContext(),
-//                                        regularRegistration.class);
+                                Intent intent = new Intent(RegistrationActivity.this, FilloutPageClient.class);
+                                startActivity(intent);
                             }
                         } else {
                             Toast.makeText(getApplicationContext(), "Username is taken",
