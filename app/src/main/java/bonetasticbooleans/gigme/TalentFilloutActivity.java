@@ -69,11 +69,6 @@ public class TalentFilloutActivity extends AppCompatActivity {
                     talents.add(Talent.MYBODY);
                 }
 
-                //test
-                for (Talent t: talents) {
-                    System.out.println(t);
-                }
-
                 if(talents.size() == 0) {
                     Toast.makeText(getApplicationContext(), "Please Make a selection",
                             Toast.LENGTH_SHORT).show();
